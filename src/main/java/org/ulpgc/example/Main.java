@@ -59,12 +59,15 @@ public class Main {
     public static void inputReader(String json) {
         try {
             ObjectInputStream deserializedSession = new ObjectInputStream(new FileInputStream("C:\\Users\\aadel\\Desktop\\Segundo\\DACD\\testing\\concesionario.txt"));
-            System.out.println(deserializedSession.toString());
+            Object objetoLeido = deserializedSession.readObject();
+            System.out.println(objetoLeido);
         } catch (FileNotFoundException exception){
             exception.printStackTrace();
             System.out.println("fooo");
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 

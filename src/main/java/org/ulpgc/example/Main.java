@@ -58,13 +58,13 @@ public class Main {
 
     public static void inputReader(String json) {
         try {
-            ObjectInputStream deserializedSession = new ObjectInputStream(new FileInputStream("C:\\Users\\aadel\\Desktop\\Segundo\\DACD\\concesionario.txt"));
-            Concesionario sessionDeserialized = (Concesionario) deserializedSession.readObject();
-            System.out.println(sessionDeserialized.toString());
+            ObjectInputStream deserializedSession = new ObjectInputStream(new FileInputStream("C:\\Users\\aadel\\Desktop\\Segundo\\DACD\\testing\\concesionario.txt"));
+            System.out.println(deserializedSession.toString());
+        } catch (FileNotFoundException exception){
+            exception.printStackTrace();
+            System.out.println("fooo");
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
 
